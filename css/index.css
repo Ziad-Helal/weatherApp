@@ -97,14 +97,11 @@ select:hover {
 
 select {
   cursor: pointer;
-  appearance: none;
-  /* For Firefox */
   -moz-appearance: none;
-  /* For Chrome */
   -webkit-appearance: none;
+  appearance: none;
 }
 
-/* For IE10 */
 select::-ms-expand {
   display: none;
 }
