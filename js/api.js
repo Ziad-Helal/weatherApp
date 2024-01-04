@@ -10,7 +10,7 @@ import { settings } from "./settings.js";
 export let user = {};
 
 const apiKey = "749a8cfca2ac4842850192058240201";
-const baseUrl = "http://api.weatherapi.com/v1/";
+const baseUrl = "https://api.weatherapi.com/v1/";
 const currentWeatherMethod = "current.json";
 const forecastMethod = "forecast.json";
 const searchMethod = "search.json";
