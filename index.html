@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Application</title>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body class="container">
+    <header class="header">
+      <h1>Weather Application</h1>
+    </header>
+    <main class="main">
+      <form>
+        <fieldset>
+          <legend class="sr-only">Search for a location</legend>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Start typing any city name.."
+            autocomplete="no"
+            autofocus
+          />
+        </fieldset>
+      </form>
+      <div id="locationsSuggestions"></div>
+      <div id="currentLocation"></div>
+      <div id="forecast"></div>
+    </main>
+    <footer class="footer">
+      <h2 class="heading">Custom Options</h2>
+      <div class="card">
+        <h3 class="subHeading">
+          <label for="forecastDays">Forecast Days</label>
+        </h3>
+        <select name="forecasrDays" id="forecastDays">
+          <option value="1">01</option>
+          <option value="2">02</option>
+          <option value="3" selected>03</option>
+          <option value="4">04</option>
+          <option value="5">05</option>
+          <option value="6">06</option>
+          <option value="7">07</option>
+          <option value="8">08</option>
+          <option value="9">09</option>
+          <option value="10">10</option>
+          <option value="11">11</option>
+          <option value="12">12</option>
+          <option value="13">13</option>
+          <option value="14">14</option>
+        </select>
+      </div>
+      <div class="card">
+        <h3 class="subHeading">
+          <label for="tempDegree">Temperature Degree</label>
+        </h3>
+        <select name="tempDegree" id="tempDegree">
+          <option value="1" selected>Celsius</option>
+          <option value="0">Fahrenheit</option>
+        </select>
+      </div>
+      <div class="card">
+        <h3 class="subHeading">
+          <label for="lengthUnit">Base Unit of Length</label>
+        </h3>
+        <select name="lengthUnit" id="lengthUnit">
+          <option value="1" selected>Meter</option>
+          <option value="0">Mile</option>
+        </select>
+      </div>
+    </footer>
+    <script src="./js/index.js" type="module"></script>
+  </body>
+</html>

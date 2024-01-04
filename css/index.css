@@ -1,0 +1,372 @@
+/*
+==============================
+  CONTENT
+==============================
+  1- Custom Properties
+    1.1- Colors
+    1.2- Borders
+  2- Reset Styles
+    2.1- General
+    2.2- Body
+    2.3- Fieldset
+    2.4- Inputs and Select
+    2.5- Loading Spinner
+  3- Utility Classes
+    3.1- Screen Readers Only
+    3.2- Container
+    3.3- Cards
+  4- Main Styles
+    4.1- Header
+    4.2- Main
+      4.2.1- Search Form
+      4.2.2- Locations Suggestions
+      4.2.3- Current Location
+      4.2.4- Forecast
+    4.3- Footer
+*/
+
+/* ==============================
+  1- Custom Properties
+============================== */
+:root {
+  /* 1.1- Colors */
+  --foreground-color: white;
+  --background-color: black;
+
+  /* 1.2- Borders */
+  --primary-border: gray solid 1px;
+  --primart-radius: 10px;
+}
+
+/* ==============================
+  2- Reset Styles
+============================== */
+
+/* 2.1- General
+============================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 2.2- Body
+============================== */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 2.3- Fieldset
+============================== */
+fieldset {
+  border: none;
+}
+
+/* 2.4- Inputs and Select
+============================== */
+
+input:not([type="radio"]),
+select {
+  width: 100%;
+  outline: none;
+  border: var(--primary-border);
+  border-radius: var(--primart-radius);
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  color: var(--foreground-color);
+  background-color: var(--background-color);
+}
+
+input:not([type="radio"]):focus,
+select:focus,
+input:not([type="radio"]):hover,
+select:hover {
+  border-color: var(--foreground-color);
+}
+
+select {
+  cursor: pointer;
+  /* For Firefox */
+  -moz-appearance: none;
+  /* For Chrome */
+  -webkit-appearance: none;
+}
+
+/* For IE10 */
+select::-ms-expand {
+  display: none;
+}
+
+/* 2.5- Loading Spinner
+============================== */
+
+.loading-ring {
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.loading-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  margin: 8px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  animation: loading-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #fff transparent transparent transparent;
+}
+
+.loading-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+
+.loading-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+
+.loading-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+
+@keyframes loading-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==============================
+  3- Utility Classes
+============================== */
+
+/* 3.1- Screen Readers Only
+============================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* 3.2- Container
+============================== */
+.container {
+  width: 80%;
+  max-width: 992px;
+  margin-inline: auto;
+}
+
+/* 3.3- Cards
+============================== */
+
+.card {
+  border: var(--primary-border);
+  border-radius: var(--primart-radius);
+  padding: 0.5rem 1rem;
+}
+
+.location_card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location_card .country,
+.location_card .region {
+  color: gray;
+  font-size: 0.85em;
+}
+
+/* ==============================
+  4- Main Styles
+============================== */
+
+/* 4.1- Header
+============================== */
+
+.header {
+  padding-block: 1rem;
+  text-align: center;
+}
+
+/* 4.2- Main
+============================== */
+
+.main {
+  flex-grow: 1;
+}
+
+/* ========== 4.2.1- Search Form ========== */
+
+/* ========== 4.2.2- Locations Suggestions ========== */
+
+#locationsSuggestions {
+  padding: 0.5rem;
+}
+
+#locationsSuggestions > * {
+  margin-bottom: 0.25rem;
+}
+
+#locationsSuggestions .card {
+  cursor: pointer;
+}
+
+#locationsSuggestions .card:hover {
+  border-color: white;
+}
+
+/* ========== 4.2.3- Current Location && 4.2.4- Forecast ========== */
+
+#currentLocation,
+.forecast_header {
+  margin-block: 2rem;
+  font-size: 1.25em;
+}
+
+.currentLocation_header,
+.forecast_header {
+  margin-bottom: 1rem;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.currentLocation_header .lastUpdated,
+.forecast_header .lastUpdated {
+  font-size: 0.75em;
+  cursor: pointer;
+  color: gray;
+  font-size: 0.85em;
+}
+
+.currentLocation_header .lastUpdated:hover,
+.forecast_header .lastUpdated:hover {
+  color: white;
+}
+
+/* ========== 4.2.3- Current Location ========== */
+
+#currentLocation .location_card {
+  display: block;
+}
+
+#currentLocation .location_card_header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#currentLocation .location_card_body {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+#currentLocation .location_card_body > div:first-child {
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+#currentLocation .location_card_body > div:last-child {
+  margin-top: 12px;
+  font-size: 0.75em;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+#currentLocation .location_card_body > div:first-child > div:nth-child(2) {
+  margin-top: 12px;
+  display: flex;
+  gap: 0.25rem;
+  flex-direction: column;
+}
+
+#currentLocation .location_card_body .temp {
+  font-size: 1.5em;
+  font-weight: 600;
+}
+
+/* ========== 4.2.4- Forecast ========== */
+
+#forecast .card {
+  display: flex;
+  gap: 5px;
+  align-items: flex-start;
+}
+
+#forecast .card:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
+
+#forecast .forecast_body {
+  margin-block: 7px;
+  flex-grow: 1;
+}
+
+#forecast .forecast_body > *:not(:last-child) {
+  margin-bottom: 0.5em;
+}
+
+#forecast .forecast_body > *:first-child {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#forecast .forecast_body .max_temp,
+#forecast .forecast_body .min_temp {
+  font-size: 0.9em;
+  color: gray;
+}
+
+#forecast .forecast_body .avg_temp {
+  font-size: 1.1em;
+}
+
+/* 4.3- Footer
+============================== */
+
+.footer {
+  margin-block: 2rem;
+}
+
+.footer .heading {
+  margin-bottom: 1rem;
+}
+
+.footer .subHeading {
+  margin-bottom: 0.5rem;
+}
+
+.footer .card:not(:last-child) {
+  margin-bottom: 0.75rem;
+}
