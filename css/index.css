@@ -97,6 +97,7 @@ select:hover {
 
 select {
   cursor: pointer;
+  appearance: none;
   /* For Firefox */
   -moz-appearance: none;
   /* For Chrome */
